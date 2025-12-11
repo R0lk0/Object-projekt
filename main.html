@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rozsdahalom</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <header>
+        <h1>Rozsdahalom autókölcsönző</h1>
+    </header>
+
+    <button id="ujauto">Új autó</button>
+    <div id="megnyiloablak">
+        <h2>Új autó hosszáadása</h2>
+        <input type="text" id="model" placeholder="model">
+        <br>
+        <input type="checkbox" id="available" placeholder="elérhető"> elérhető
+        <br>
+        <input type="text" id="price" placeholder="ár (ft/nap)">
+        <button id="hozzaadas">Autó hozzáadása</button>
+    </div>
+
+    <div class="row" id="autok">
+        <div class="imgbox">
+            <img src="images/beetle.jfif" alt="beetle">
+            <p id="bogarp"></p>
+        </div>
+
+        <div class="imgbox">
+            <img src="images/lada.jpg" alt="lada">
+            <p id="ladap"></p>
+        </div>
+
+        <div class="imgbox">
+            <img src="images/yugo.jpg" alt="yugo">
+            <p id="yugop"></p>
+        </div>
+        <div id="newcars"></div>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

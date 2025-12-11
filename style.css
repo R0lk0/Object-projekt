@@ -1,0 +1,77 @@
+body{
+    margin: 0;
+    background-image: linear-gradient(to top, #A59D84, #C1BAA1, #D7D3BF, #ECEBDE);
+    color: #042a3c;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.imgbox{
+    width: 28%;
+    text-align: center;
+    box-sizing: border-box; 
+    background-color: rgba(218, 165, 32, 0.6);
+    margin: 30px;
+    border-radius: 50px;
+}
+#masodiksor{
+    visibility: collapse;
+}
+img{
+    width: 30rem;
+    margin-top: 50px;
+    border-radius: 30px;
+}
+p{
+    width: 80%;
+    margin: auto;
+    padding-bottom: 30px;
+    font-size: 20px;
+    line-height: 1.5;
+}
+h1{
+    text-align: center;
+    font-size: 40px;
+    color: goldenrod;
+    text-shadow: 1px 1px 2px peru, 0 0 2em aqua;
+}
+h2{
+    text-align: center;
+    font-size: 32px;
+    color: #041C32;
+    padding-top: 10px;
+}
+header, footer{
+    background-color: #041C32;
+    padding: 10px;
+}
+#ujauto{
+    width: 200px;
+    height: 50px;
+    font-size: 32px;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+#megnyiloablak{
+    visibility: collapse;
+    background-color: rgba(218, 165, 32);
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 5%;
+    position: absolute;
+    border-radius: 20px;
+    align-items: center;
+    padding-bottom: 20px;
+}
+input, #hozzaadas{
+    margin: 5px;
+    margin-left: 25%;
+    align-items: center;
+}
+#torles{
+    margin-top: 10px;
+    border-radius: 100%;
+    position: absolute;
+}
