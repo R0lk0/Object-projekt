@@ -25,26 +25,59 @@ ujauto.addEventListener("click",()=>{
     megnyiloablak.style.visibility = "visible";
 })
 
-hozzaadas.addEventListener("click", ()=>{
-    megnyiloablak.style.visibility = "collapse";
-    const newcar = {model: model.value, available: available.value == "on" ? "elérhető": "nem elérhető", price: price.value}
+hozzaadas.addEventListener("click", () => {
+
+    if (model.value.trim() === "") {
+        alert("Adjon meg egy autó modellt!");
+        return;
+    }
+
+    if (price.value.trim() === "") {
+        alert("Adjon meg egy árat!");
+        return;
+    }
+
+    if (isNaN(price.value)) {
+        alert("Az ár csak szám lehet!");
+        return;
+    }
+
+    const newcar = {
+        model: model.value.trim(),
+        available: available.checked ? "elérhető" : "nem elérhető",
+        price: Number(price.value)
+    };
+
     osszesauto.push(newcar);
     renderCars(osszesauto);
-})
+
+    megnyiloablak.style.visibility = "collapse";
+
+});
+
 
 function renderCars(autok){
     const autoktag = document.getElementById("newcars");
-    let content = "";
-    osszesauto.forEach(auto => {
-        content += `
-        <div class="imgbox">
-            <button id="torles">Törlés</button>
+    autoktag.innerHTML = "";
+
+    autok.forEach((auto, index) => {
+        const card = document.createElement("div");
+        card.className = "imgbox";
+
+        card.innerHTML = `
+            <button class="torles">🗑️</button>
             <img src="images/empty.jpg" alt="car">
-            <p>${auto.model}<br>${auto.available}<br>${auto.price}</p>
-        </div>
-        `
+            <p>${auto.model}<br>${auto.available}<br>${auto.price} ft/nap</p>
+        `;
+
+        card.querySelector(".torles").addEventListener("click", () => {
+            osszesauto.splice(index, 1);
+            renderCars(osszesauto);
+        });
+
+        autoktag.appendChild(card);
     });
-    autoktag.innerHTML = content;
 }
+
 
 renderCars(osszesauto);
